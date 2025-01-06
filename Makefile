@@ -11,3 +11,7 @@ bin/testHashTable: testHashTable.cpp HashTable.h TableEntry.h
 bin/testBSTree: testBSTree.cpp BSTree.h TableEntry.h
 		mkdir -p bin
 		g++ -o bin/testBSTree testBSTree.cpp
+
+bin/testBSTreeDict: testBSTreeDict.cpp BSTreeDict.h TableEntry.h
+		mkdir -p bin
+		g++ -o bin/testBSTreeDict testBSTreeDict.cpp
