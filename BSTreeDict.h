@@ -32,27 +32,27 @@ class BSTreeDict: public Dict<V> {
             TableEntry<V> result = tree -> search(entry);
             return result.value;
         }
-
-        int entries(){
-            return tree -> size();
-        }
         
-        void insert(std::string key, V value){
+        void insert(std::string key, V value) override {
             TableEntry<V> entry(key, value);
             tree -> insert(entry);
         }
 
-        V search(std::string key){
+        V search(std::string key) const override {
             TableEntry<V> entry(key);
             TableEntry<V> result = tree -> search(entry);
             return result.value;
         }
 
-        V remove(std::string key){
+        V remove(std::string key) override{
             TableEntry<V> entry(key);
             TableEntry<V> result = tree -> search(entry);
             tree -> remove(entry);
             return result.value;
+        }
+
+        int entries() const override {
+            return tree -> size();
         }
 };
 
