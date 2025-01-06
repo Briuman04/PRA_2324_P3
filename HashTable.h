@@ -20,7 +20,7 @@ class HashTable : public Dict<V> {
 
         std::list<TableEntry<V>>* table;
 
-        int h(std::string key) {
+        int h(std::string key) const {
             int sum = 0;
             for (char c : key) {
                 sum += static_cast<int>(c);
